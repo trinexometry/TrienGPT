@@ -12,7 +12,7 @@ headers = {
 
 translation = Translator()
 
-os.environ['OPENAI_API_KEY'] = apikey
+os.environ['OPENAI_API_KEY'] = OPENAI_API_KEY
 #TITLE AND CONTENT
 st.title("🐥TrienGPT")
 prompt = st.text_input("INPUT DAAL DE BHAI")
