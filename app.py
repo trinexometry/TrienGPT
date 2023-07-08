@@ -23,7 +23,7 @@ headers = {
 
 os.environ['OPENAI_API_KEY'] = os.getenv('apikey')
 #TITLE AND CONTENT
-st.title("🐥TrienGPT")
+st.markdown("<h1 style='text-align: center; color: red;'>🐥TrienGPT🐥</h1>", unsafe_allow_html=True)
 prompt = st.text_input("Ah.. Here we go again...")
 
 #GETTING OUTPUT
@@ -93,18 +93,18 @@ def Text_to_speech(Output_language, response, tld):
     return sound_file
 
 
-display_output_text = st.button("RESULTS")
+display_output_text = st.button("Submit")
 
 result_trans = Translation(response)
 if display_output_text:
-    st.markdown(f"## TEXT:  \n")
+    st.markdown(f"### Text:  \n")
     st.write(result_trans)
     audio_file = Text_to_speech(output_language, result_trans, tld)
-    st.markdown(f"## AUDIO:  \n")
+    st.markdown(f"### Audio:  \n")
     st.audio(audio_file)
 
 else:
-    st.markdown(f"## Enter Prompt Please")
+    st.write("Enter Prompt Please!")
 
 
 
