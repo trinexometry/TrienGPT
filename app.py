@@ -6,6 +6,8 @@ from io import BytesIO
 from googletrans import Translator
 from dotenv import load_dotenv
 
+translation = Translator()
+
 def configure():
     load_dotenv()
 
@@ -17,7 +19,7 @@ headers = {
     "content-type": "application/json"
 }
 
-translation = Translator()
+
 
 os.environ['OPENAI_API_KEY'] = os.getenv('apikey')
 #TITLE AND CONTENT
