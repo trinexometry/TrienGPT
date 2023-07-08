@@ -4,15 +4,22 @@ from langchain.llms import OpenAI
 from gtts import gTTS
 from io import BytesIO
 from googletrans import Translator
+from dotenv import load_dotenv
+
+def configure():
+    load_dotenv()
+
+configure()
+
 
 headers = {
-    'Authorization': st.secrets["OPENAI_API_KEY"],
+    'Authorization': st.secrets["apikey"],
     "content-type": "application/json"
 }
 
 translation = Translator()
 
-os.environ['OPENAI_API_KEY'] = OPENAI_API_KEY
+os.environ['OPENAI_API_KEY'] = os.getenv('apikey')
 #TITLE AND CONTENT
 st.title("🐥TrienGPT")
 prompt = st.text_input("INPUT DAAL DE BHAI")
