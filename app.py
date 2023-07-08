@@ -98,8 +98,6 @@ display_output_text = st.checkbox("DISPLAY TRANSLATED TEXT")
 result_trans = Translation(response)
 if display_output_text:
     st.write(result_trans)
-else:
-    st.write(response)
 
 
 audio_file = Text_to_speech(output_language, result_trans, tld)
