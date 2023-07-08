@@ -93,7 +93,7 @@ def Text_to_speech(Output_language, response, tld):
     return sound_file
 
 
-display_output_text = st.checkbox("DISPLAY OUTPUT TEXT")
+display_output_text = st.checkbox("DISPLAY TRANSLATED TEXT")
 
 
 result_trans = Translation(response)
