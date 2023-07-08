@@ -24,7 +24,7 @@ headers = {
 os.environ['OPENAI_API_KEY'] = os.getenv('apikey')
 #TITLE AND CONTENT
 st.title("🐥TrienGPT")
-prompt = st.text_input("INPUT DAAL DE BHAI")
+prompt = st.text_input("Ah.. Here we go again...")
 
 #GETTING OUTPUT
 llm = OpenAI(temperature = 0.9)
@@ -93,15 +93,18 @@ def Text_to_speech(Output_language, response, tld):
     return sound_file
 
 
-display_output_text = st.checkbox("DISPLAY TRANSLATED TEXT")
+display_output_text = st.button("RESULTS")
 
 result_trans = Translation(response)
 if display_output_text:
+    st.markdown(f"## TEXT:  \n")
     st.write(result_trans)
     audio_file = Text_to_speech(output_language, result_trans, tld)
+    st.markdown(f"## AUDIO:  \n")
     st.audio(audio_file)
 
-
+else:
+    st.markdown(f"## Enter Prompt Please")
 
 
 
