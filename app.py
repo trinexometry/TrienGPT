@@ -95,9 +95,12 @@ def Text_to_speech(Output_language, response, tld):
 
 display_output_text = st.checkbox("DISPLAY TRANSLATED TEXT")
 
+if display_output_text:
+    result_trans = Translation(response)
+    st.write(result_trans)
+else:
+    st.write(response)
 
-result_trans = Translation(response)
-st.write(result_trans)
 
 audio_file = Text_to_speech(output_language, result_trans, tld)
 st.audio(audio_file)
